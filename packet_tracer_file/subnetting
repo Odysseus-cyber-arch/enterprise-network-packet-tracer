@@ -1,0 +1,40 @@
+ Design a network to connect accounts and delivery  departments with each depat. Having 2 pcs , using the given network address of 192.168.40.0
+
+
+Network address 192.168.40.0
+We need 2 subnets – because 2 departments.
+
+Net address-192.168.40.0
+Default mask - /24 -255.255.255.0
+
+Range of 1st octet
+•	1-126—---------------------class A -------- / 8
+•	128-191 -------------------class B---------- /16
+•	192-223 ------------------class c -----------/24
+192 falls in class c ----------------------------------------/24 ===== 255.255.255.0 ================== first 24 bits network , rest – host address ====== 11111111.11111111.11111111.00000000 
+If we convert each octet --- 11111111= 255 thus we get 255.255.255.0.
+
+•	Number of subnets = 2^n
+(where n = number of bits borrowed)
+I need two subnets -----  2 = 2^n
+N has to be 1. (1 we have borrowed 1 bit)
+Now new subnet mask is - /25 – 255.255.255.128
+
+Original- /24- 256 IPs
+New- /25- split into 2 equal subnets 
+•	Each subnet gets -
+•	128 IPs in total
+•	126 Usable hosts
+
+Subnet calculation—
+Subnet 1 – 
+•	Network ID-192.168.40.0/25
+•	Range – 192.168.40.1 – 192.168.40.126
+•	Broadcast   - 192.168.40.127
+Subnet 2
+•	Network ID – 192.168.40.128/25
+•	Range – 192.168.40.129 – 192.168.40.254
+•	Broadcast – 192.168.40.255
+ 
+
+
